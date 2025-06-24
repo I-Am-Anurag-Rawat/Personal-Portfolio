@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+load_dotenv()  # load values from .env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,10 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-35z8oe24@)chyp3se)+vxwf)=#+#r95-2ibspmmufv3vpgjh(e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['personal-portfolio-25tx.onrender.com', '127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = os.getenv('personal-portfolio-25tx.onrender.com', "127.0.0.1,localhost").split(",")
 
 # Application definition
 
@@ -134,3 +136,4 @@ EMAIL_USE_TLS = True
 CONTACT_RECEIVER_EMAIL = 'itsanuragrawat@gmail.com'
 EMAIL_HOST_USER = 'rawatanurag180@gmail.com'  # Your email address
 EMAIL_HOST_PASSWORD = 'begn zllk zaii egba'  # App password (not your regular password)
+

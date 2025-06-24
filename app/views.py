@@ -21,4 +21,4 @@ def index(request):
         except Exception as e:
             messages.error(request, f"❌ Failed to send email: {e}")  # Error message
             return redirect('index')  # Redirect even on failure to avoid stuck page
-    return render(request, 'index.html')
+    return render(request, 'app/index.html')
