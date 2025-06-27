@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret")
+SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "False"
 print(DEBUG)
 ALLOWED_HOSTS = os.getenv('"ALLOWED_HOSTS"', "127.0.0.1,localhost,personal-portfolio-25tx.onrender.com").split(",")
 
@@ -137,7 +137,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # Change this for different providers
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-CONTACT_RECEIVER_EMAIL = 'itsanuragrawat@gmail.com'
-EMAIL_HOST_USER = 'rawatanurag180@gmail.com'  # Your email address
-EMAIL_HOST_PASSWORD = 'begn zllk zaii egba'  # App password (not your regular password)
+CONTACT_RECEIVER_EMAIL = os.getenv("CONTACT_RECEIVER_EMAIL")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")  # Your email address
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # App password (not your regular password)
 
