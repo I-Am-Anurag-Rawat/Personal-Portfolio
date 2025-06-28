@@ -27,8 +27,8 @@ This is a **responsive personal portfolio website** built with **Django**, **HTM
 
 ```bash
 git clone https://github.com/I-Am-Anurag-Rawat/Personal-Portfolio.git
-cd portfolio
+cd personal-portfolio
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+venv\Scripts\activate # or source venv/bin/activate on mac
 pip install -r requirements.txt
 python manage.py runserver
