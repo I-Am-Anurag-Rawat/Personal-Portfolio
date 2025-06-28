@@ -26,7 +26,7 @@ This is a **responsive personal portfolio website** built with **Django**, **HTM
 ## 🚀 Getting Started
 
 ```bash
-git clone [https://github.com/yourusername/portfolio.git](https://github.com/I-Am-Anurag-Rawat/Personal-Portfolio.git)
+git clone https://github.com/I-Am-Anurag-Rawat/Personal-Portfolio.git
 cd portfolio
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
