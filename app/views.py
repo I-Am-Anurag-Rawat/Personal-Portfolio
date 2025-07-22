@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.conf import settings
 from django.contrib import messages
 
@@ -17,8 +17,8 @@ def index(request):
         try:
             send_mail(subject, full_message, from_email, [to_email])
             messages.success(request, "✅ Email sent successfully!")  # Success message
-            return redirect('index')  # Redirect to prevent resubmission
+            return HttpResponse(status = 204)
         except Exception as e:
             messages.error(request, f"❌ Failed to send email: {e}")  # Error message
-            return redirect('index')  # Redirect even on failure to avoid stuck page
+            return HttpResponse(status = 204)
     return render(request, 'app/index.html')
