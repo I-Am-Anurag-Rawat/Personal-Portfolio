@@ -33,4 +33,4 @@ venv\Scripts\activate # or source venv/bin/activate on mac
 pip install -r requirements.txt
 python manage.py runserver
 
---> Very important Note : Go to .myenv file and rename it into .env, and follow the instructions given there. <--
+--> Very important Note : Go to .myenv file and rename it into .env and follow the instructions given there. <--
